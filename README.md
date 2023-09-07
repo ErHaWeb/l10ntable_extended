@@ -1,4 +1,4 @@
-# L10ntable Extended
+# Extended Localization Table
 Experimental TYPO3 Extension by Eric Harrer
 
 ## Description

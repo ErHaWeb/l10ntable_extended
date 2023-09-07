@@ -1,6 +1,6 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'L10ntable Extended',
+    'title' => 'Extended Localization Table',
     'description' => 'With the assistance of this extension, the localization overview within the Info module gains an enhanced "Edit all language overlay records" button, featuring individually customizable fields. This empowers users to conveniently perform batch edits on configurable page fields on page translations.',
     'category' => 'module',
     'author' => 'Eric Harrer',
