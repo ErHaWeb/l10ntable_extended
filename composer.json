@@ -1,0 +1,44 @@
+{
+	"name": "erhaweb/l10ntable-extended",
+	"type": "typo3-cms-extension",
+	"description": "With the assistance of this extension, the localization overview within the Info module gains an enhanced \"Edit all language overlay records\" button, featuring individually customizable fields. This empowers users to conveniently perform batch edits on configurable page fields on page translations.",
+	"keywords": [
+		"TYPO3",
+		"extension",
+		"Info",
+		"Module",
+		"l10ntable",
+		"Localization"
+	],
+	"homepage": "https://extensions.typo3.org/extension/l10ntable_extended",
+	"support": {
+		"source": "https://github.com/ErHaWeb/l10ntable_extended",
+		"issues": "https://github.com/ErHaWeb/l10ntable_extended/issues",
+		"docs": "https://docs.typo3.org/p/georgringer/news/main/en-us/"
+	},
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"typo3/cms-info": "^11.5 || ^12.4"
+	},
+	"require-dev": {
+		"roave/security-advisories": "dev-latest"
+	},
+	"authors": [
+		{
+			"name": "Eric Harrer",
+			"role": "Developer",
+			"email": "info@eric-harrer.de",
+			"homepage": "www.eric-harrer.de"
+		}
+	],
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "l10ntable_extended"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"ErHaWeb\\L10ntableExtended\\": "Classes"
+		}
+	}
+}

@@ -1,0 +1,4 @@
+tx_l10ntableextended {
+  searchColumnsList = title,nav_title,hidden
+  replaceColumnsList = title,nav_title,hidden
+}
