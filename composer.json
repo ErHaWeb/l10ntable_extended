@@ -14,14 +14,7 @@
 	"support": {
 		"source": "https://github.com/ErHaWeb/l10ntable_extended",
 		"issues": "https://github.com/ErHaWeb/l10ntable_extended/issues",
-		"docs": "https://docs.typo3.org/p/georgringer/news/main/en-us/"
-	},
-	"license": "GPL-2.0-or-later",
-	"require": {
-		"typo3/cms-info": "^11.5 || ^12.4"
-	},
-	"require-dev": {
-		"roave/security-advisories": "dev-latest"
+		"docs": "https://github.com/ErHaWeb/l10ntable_extended#readme"
 	},
 	"authors": [
 		{
@@ -31,6 +24,13 @@
 			"homepage": "www.eric-harrer.de"
 		}
 	],
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"typo3/cms-info": "^11.5 || ^12.4"
+	},
+	"require-dev": {
+		"roave/security-advisories": "dev-latest"
+	},
 	"extra": {
 		"typo3/cms": {
 			"extension-key": "l10ntable_extended"
