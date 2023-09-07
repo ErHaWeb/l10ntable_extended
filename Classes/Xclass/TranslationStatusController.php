@@ -23,15 +23,22 @@ class TranslationStatusController extends \TYPO3\CMS\Info\Controller\Translation
      */
     protected function renderL10nTable(PageTreeView $tree, ServerRequestInterface $request): string
     {
+        // Get the string return of the original function
         $return = parent::renderL10nTable($tree, $request);
 
-        $replaceColumnsList = $this->getBackendUser()->getTSConfig()['tx_l10ntableextended.']['replaceColumnsList'] ?? false;
+        // Get the configuration from user TSconfig
+        $userTsConfig = $this->getBackendUser()->getTSConfig()['tx_l10ntableextended.'];
+        $replaceColumnsList = $userTsConfig['replaceColumnsList'] ?? false;
 
-        if ($replaceColumnsList) {
-            $searchColumnsList = $this->getBackendUser()->getTSConfig()['tx_l10ntableextended.']['searchColumnsList'] ?? false;
-            $columnsUrlParameter = urlencode($this->getBackendUser()->getTSConfig()['tx_l10ntableextended.']['columnsUrlParameter'] ?? false);
+        // If the list to be replaced with is not empty and does not contain the default value of the core
+        if ($replaceColumnsList && $replaceColumnsList !== 'title,nav_title,hidden') {
+            // Get values for the list to be replaced
+            $searchColumnsList = $userTsConfig['searchColumnsList'] ?? false;
 
-            // Trim explode lists to remove any spaces and do further checks
+            // Get the required url parameter
+            $columnsUrlParameter = urlencode($userTsConfig['columnsUrlParameter'] ?? false);
+
+            // Trim explode search and replace lists to remove any spaces and do further checks
             $replaceColumns = GeneralUtility::trimExplode(',', $replaceColumnsList);
             $searchColumns = GeneralUtility::trimExplode(',', $searchColumnsList);
 
@@ -43,6 +50,7 @@ class TranslationStatusController extends \TYPO3\CMS\Info\Controller\Translation
                 }
             }
 
+            // Convert arrays back to well-formed comma-separated lists
             $search = implode(',', $searchColumns);
             $replace = implode(',', $replaceColumns);
 
@@ -52,6 +60,7 @@ class TranslationStatusController extends \TYPO3\CMS\Info\Controller\Translation
                 $replace = urlencode($replace);
             }
 
+            // Form the full search and replacement string from URL parameter and field list
             $search = $columnsUrlParameter . '=' . $search;
             $replace = $columnsUrlParameter . '=' . $replace;
 
