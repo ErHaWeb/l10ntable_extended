@@ -51,3 +51,10 @@ tx_l10ntableextended {
   searchColumnsList = title,nav_title,hidden
 }
 ```
+Even the name of the `columnsOnly` parameter that is evaluated by the `EditDocumentController` could be customized using the following setting.
+```
+tx_l10ntableextended {
+  columnsUrlParameter = columnsOnly
+}
+```
+However, this should normally not be necessary.
