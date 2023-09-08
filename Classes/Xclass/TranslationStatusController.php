@@ -62,7 +62,7 @@ class TranslationStatusController extends \TYPO3\CMS\Info\Controller\Translation
             $replace = implode(',', $replaceColumns);
 
             // Older TYPO3 versions need to do url encoding
-            if (GeneralUtility::makeInstance(Typo3Version::class)?->getMajorVersion() < 12) {
+            if (GeneralUtility::makeInstance(Typo3Version::class)->getMajorVersion() < 12) {
                 $search = urlencode($search);
                 $replace = urlencode($replace);
             }
