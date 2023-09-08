@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2023-09-08T09:14:00Z" product-name="l10ntable_extended">
+		<header/>
+		<body>
+			<trans-unit id="extmng.enableUserSettings" xml:space="preserve">
+				<source>Enable User Settings</source>
+			</trans-unit>
+			<trans-unit id="usersettings" xml:space="preserve">
+				<source>Localization Overview</source>
+			</trans-unit>
+			<trans-unit id="usersettings.replaceColumnsList" xml:space="preserve">
+				<source>Select multiple columns that can be edited when using the "Edit all language overlay records" button</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,2 @@
+# cat=basic; type=boolean; label=LLL:EXT:l10ntable_extended/Resources/Private/Language/locallang_be.xlf:extmng.enableUserSettings
+enableUserSettings = 1
