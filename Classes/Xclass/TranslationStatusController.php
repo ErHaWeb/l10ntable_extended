@@ -30,7 +30,7 @@ class TranslationStatusController extends \TYPO3\CMS\Info\Controller\Translation
         $userTsConfig = $this->getBackendUser()->getTSConfig()['tx_l10ntableextended.'];
 
         // Get the list of columns to be replaced from the user settings (if available)
-        $replaceColumnsList = $this->getBackendUser()->uc['tx_l10ntableextended_replaceColumnsList'];
+        $replaceColumnsList = $this->getBackendUser()->uc['tx_l10ntableextended_replaceColumnsList'] ?? '';
 
         // If no user settings are set get the value from the user TSconfig configuration
         if(!$replaceColumnsList) {

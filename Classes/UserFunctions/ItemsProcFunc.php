@@ -17,7 +17,7 @@ class ItemsProcFunc
 {
     public function renderItems(): string
     {
-        $selectedColumns = GeneralUtility::trimExplode(',', $this->getBackendUser()->uc['tx_l10ntableextended_replaceColumnsList']);
+        $selectedColumns = GeneralUtility::trimExplode(',', $this->getBackendUser()->uc['tx_l10ntableextended_replaceColumnsList'] ?? '');
         $lang = $this->getLanguageService();
         $html = '<select id="tx_l10ntableextended_replaceColumns" size="20" class="form-control" multiple>';
         $html .= '<option value="">-</option>';
