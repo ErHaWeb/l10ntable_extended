@@ -78,9 +78,10 @@ If the default fields used by the TYPO3 core for batch editing in future version
 
 ```
 tx_l10ntableextended {
-  searchColumnsList = title,nav_title,hidden
+  searchColumnsList = title,nav_title,l18n_cfg,hidden|title,nav_title,hidden
 }
 ```
+The pipe symbol `|` allows you to define several possible search column lists that are to be replaced by `tx_l10ntableextended.replaceColumnsList` in the final HTML output.  In this way, it is possible to manipulate both the button of the default language and the button of the non-default languages and thus make changes to individually definable fields in all available languages.
 
 Even the name of the `columnsOnly` parameter that is evaluated by the `EditDocumentController` could be customized using the following setting.
 

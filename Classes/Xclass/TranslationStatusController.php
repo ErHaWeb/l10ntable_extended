@@ -38,41 +38,43 @@ class TranslationStatusController extends \TYPO3\CMS\Info\Controller\Translation
         }
 
         // If the list to be replaced with is not empty and does not contain the default value of the core
-        if ($replaceColumnsList && $replaceColumnsList !== 'title,nav_title,hidden') {
+        if ($replaceColumnsList && $replaceColumnsList !== 'title,nav_title,l18n_cfg,hidden') {
             // Get values for the list to be replaced
-            $searchColumnsList = $userTsConfig['searchColumnsList'] ?? false;
+            $searchColumnsLists = GeneralUtility::trimExplode('|', $userTsConfig['searchColumnsList'] ?? '');
 
-            // Get the required url parameter
-            $columnsUrlParameter = urlencode($userTsConfig['columnsUrlParameter'] ?? false);
+            foreach ($searchColumnsLists as $searchColumnsList) {
+                // Get the required url parameter
+                $columnsUrlParameter = urlencode($userTsConfig['columnsUrlParameter'] ?? false);
 
-            // Trim explode search and replace lists to remove any spaces and do further checks
-            $replaceColumns = GeneralUtility::trimExplode(',', $replaceColumnsList);
-            $searchColumns = GeneralUtility::trimExplode(',', $searchColumnsList);
+                // Trim explode search and replace lists to remove any spaces and do further checks
+                $replaceColumns = GeneralUtility::trimExplode(',', $replaceColumnsList);
+                $searchColumns = GeneralUtility::trimExplode(',', $searchColumnsList);
 
-            // Remove columns that are not available
-            $existingColumns = array_keys($GLOBALS['TCA']['pages']['columns']);
-            foreach ($replaceColumns as $key => $replaceColumn) {
-                if (!in_array($replaceColumn, $existingColumns, true)) {
-                    unset($replaceColumns[$key]);
+                // Remove columns that are not available
+                $existingColumns = array_keys($GLOBALS['TCA']['pages']['columns']);
+                foreach ($replaceColumns as $key => $replaceColumn) {
+                    if (!in_array($replaceColumn, $existingColumns, true)) {
+                        unset($replaceColumns[$key]);
+                    }
                 }
+
+                // Convert arrays back to well-formed comma-separated lists
+                $search = implode(',', $searchColumns);
+                $replace = implode(',', $replaceColumns);
+
+                // Older TYPO3 versions need to do url encoding
+                if (GeneralUtility::makeInstance(Typo3Version::class)->getMajorVersion() < 12) {
+                    $search = urlencode($search);
+                    $replace = urlencode($replace);
+                }
+
+                // Form the full search and replacement string from URL parameter and field list
+                $search = $columnsUrlParameter . '=' . $search;
+                $replace = $columnsUrlParameter . '=' . $replace;
+
+                // If the old field list was found as a search string, it can be replaced by the new list
+                $return = str_replace($search, $replace, $return);
             }
-
-            // Convert arrays back to well-formed comma-separated lists
-            $search = implode(',', $searchColumns);
-            $replace = implode(',', $replaceColumns);
-
-            // Older TYPO3 versions need to do url encoding
-            if (GeneralUtility::makeInstance(Typo3Version::class)->getMajorVersion() < 12) {
-                $search = urlencode($search);
-                $replace = urlencode($replace);
-            }
-
-            // Form the full search and replacement string from URL parameter and field list
-            $search = $columnsUrlParameter . '=' . $search;
-            $replace = $columnsUrlParameter . '=' . $replace;
-
-            // If the old field list was found as a search string, it can be replaced by the new list
-            $return = str_replace($search, $replace, $return);
         }
 
         return $return;
