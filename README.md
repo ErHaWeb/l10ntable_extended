@@ -40,13 +40,23 @@ Of course, it is also possible to omit all or some of the fields that are used b
 
 ```
 tx_l10ntableextended {
-  columns = seo_title,description
+  replaceColumnsList = seo_title,description
 }
 ```
 
 Fields that are not available in the context of a page type (for example, the `seo_title` field for pages of type `Folder [254]`) are simply not displayed in the context of batch editing.
 
 Fields that do not exist in `$GLOBALS['TCA']['pages']['columns']` are **not considered at all**.
+
+### Override global configuration in your sitepackage
+
+Please note that your sitepackage must be loaded after the `EXT:l10ntable_extended` so that the default user TSconfig can be overwritten at file level.
+
+This can be achieved by adding the following configuration in file `ext_emconf.php` of your sitepackage extension:
+
+```php
+$EM_CONF[$_EXTKEY]['constraints']['depends']['l10ntable_extended'] = '';
+```
 
 ### Extension Configuration
 
