@@ -6,7 +6,7 @@ use ErHaWeb\L10ntableExtended\Xclass\TranslationStatusController as TranslationS
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Info\Controller\TranslationStatusController;
 
-defined('TYPO3') or die();
+defined('TYPO3') || die();
 
 /**
  * Adding XCLASS for TranslationStatusController
