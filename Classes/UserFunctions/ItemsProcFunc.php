@@ -27,7 +27,7 @@ class ItemsProcFunc
         $existingColumns = array_keys($GLOBALS['TCA']['pages']['columns']);
         foreach ($existingColumns as $existingColumn) {
             $html .= '<option value="' . $existingColumn . '"' . ((in_array($existingColumn, $selectedColumns, true)) ? 'selected' : '') . '>';
-            $label = $GLOBALS['TCA']['pages']['columns'][$existingColumn]['label'] ?? '';
+            $label = (string)($GLOBALS['TCA']['pages']['columns'][$existingColumn]['label'] ?? '');
             if (str_starts_with($label, 'LLL:')) {
                 $label = $lang->sL($label);
             }
