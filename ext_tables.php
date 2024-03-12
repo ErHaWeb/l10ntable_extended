@@ -16,7 +16,6 @@ defined('TYPO3') || die();
         // Extend user settings
         $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_l10ntableextended_replaceColumnsList'] = [
             'label' => 'LLL:EXT:l10ntable_extended/Resources/Private/Language/locallang_be.xlf:usersettings.replaceColumnsList',
-            'description' => 'HELLO WORLD',
             'type' => 'select',
             'itemsProcFunc' => ItemsProcFunc::class . '->renderItems',
         ];
