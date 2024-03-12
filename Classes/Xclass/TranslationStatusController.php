@@ -11,16 +11,10 @@ namespace ErHaWeb\L10ntableExtended\Xclass;
 
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Backend\Tree\View\PageTreeView;
-use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class TranslationStatusController extends \TYPO3\CMS\Info\Controller\TranslationStatusController
 {
-    /**
-     * @param PageTreeView $tree
-     * @param ServerRequestInterface $request
-     * @return string
-     */
     protected function renderL10nTable(PageTreeView $tree, ServerRequestInterface $request): string
     {
         // Get the string return of the original function
@@ -33,7 +27,7 @@ class TranslationStatusController extends \TYPO3\CMS\Info\Controller\Translation
         $replaceColumnsList = $this->getBackendUser()->uc['tx_l10ntableextended_replaceColumnsList'] ?? '';
 
         // If no user settings are set get the value from the user TSconfig configuration
-        if(!$replaceColumnsList) {
+        if (!$replaceColumnsList) {
             $replaceColumnsList = $userTsConfig['replaceColumnsList'] ?? false;
         }
 
@@ -61,12 +55,6 @@ class TranslationStatusController extends \TYPO3\CMS\Info\Controller\Translation
                 // Convert arrays back to well-formed comma-separated lists
                 $search = implode(',', $searchColumns);
                 $replace = implode(',', $replaceColumns);
-
-                // Older TYPO3 versions need to do url encoding
-                if (GeneralUtility::makeInstance(Typo3Version::class)->getMajorVersion() < 12) {
-                    $search = urlencode($search);
-                    $replace = urlencode($replace);
-                }
 
                 // Form the full search and replacement string from URL parameter and field list
                 $search = $columnsUrlParameter . '=' . $search;

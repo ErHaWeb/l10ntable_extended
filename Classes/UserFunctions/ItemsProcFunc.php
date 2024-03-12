@@ -12,7 +12,6 @@ namespace ErHaWeb\L10ntableExtended\UserFunctions;
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Domain\ConsumableString;
-use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -35,17 +34,14 @@ class ItemsProcFunc
             $html .= '</option>';
         }
         $html .= '</select>';
-
         $html .= '<input type="hidden" name="data[tx_l10ntableextended_replaceColumnsList]" id="tx_l10ntableextended_replaceColumnsList">';
         $nonce = '';
 
-        if (GeneralUtility::makeInstance(Typo3Version::class)->getMajorVersion() > 11) {
-            /** @var ConsumableString|null $nonce */
-            $nonceAttribute = $this->getRequest()->getAttribute('nonce');
+        /** @var ConsumableString|null $nonce */
+        $nonceAttribute = $this->getRequest()->getAttribute('nonce');
 
-            if ($nonceAttribute instanceof ConsumableString) {
-                $nonce = $nonceAttribute->consume();
-            }
+        if ($nonceAttribute instanceof ConsumableString) {
+            $nonce = $nonceAttribute->consume();
         }
 
         $html .= '<script' . (($nonce) ? ' nonce="' . $nonce . '"' : '') . '>';
@@ -64,17 +60,11 @@ class ItemsProcFunc
         return $html;
     }
 
-    /**
-     * @return BackendUserAuthentication
-     */
     protected function getBackendUser(): BackendUserAuthentication
     {
         return $GLOBALS['BE_USER'];
     }
 
-    /**
-     * @return LanguageService
-     */
     protected function getLanguageService(): LanguageService
     {
         return $GLOBALS['LANG'];

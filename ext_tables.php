@@ -10,9 +10,9 @@ defined('TYPO3') || die();
 
 (static function () {
     $enableUserSettings = GeneralUtility::makeInstance(ExtensionConfiguration::class)
-        ->get('l10ntable_extended', 'enableUserSettings');
+        ?->get('l10ntable_extended', 'enableUserSettings');
 
-    if($enableUserSettings) {
+    if ($enableUserSettings) {
         // Extend user settings
         $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_l10ntableextended_replaceColumnsList'] = [
             'label' => 'LLL:EXT:l10ntable_extended/Resources/Private/Language/locallang_be.xlf:usersettings.replaceColumnsList',
