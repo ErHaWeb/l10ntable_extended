@@ -4,16 +4,16 @@
     <header/>
     <body>
       <trans-unit id="extmng.enableUserSettings" resname="extmng.enableUserSettings">
-        <source>Enable user settings:If enabled, backend users can select in the user settings which fields are available when using the "Edit all" buttons under "List" → "Localization overview". If not empty, the backend user selection overrides the TSconfig setting `tx_l10ntableextended.replaceColumnsList`.</source>
-        <target state="needs-translation">Enable user settings:If enabled, backend users can select in the user settings which fields are available when using the "Edit all" buttons under "List" → "Localization overview". If not empty, the backend user selection overrides the TSconfig setting `tx_l10ntableextended.replaceColumnsList`.</target>
+        <source>Enable user settings:If enabled, backend users can select in the user settings which fields are available when using the "Edit all" buttons under "Info" → "Localization overview". If not empty, the backend user selection overrides the TSconfig setting `tx_l10ntableextended.replaceColumnsList`.</source>
+        <target state="needs-translation">Enable user settings:If enabled, backend users can select in the user settings which fields are available when using the "Edit all" buttons under "Info" → "Localization overview". If not empty, the backend user selection overrides the TSconfig setting `tx_l10ntableextended.replaceColumnsList`.</target>
       </trans-unit>
       <trans-unit id="usersettings" resname="usersettings">
         <source>Localization Overview</source>
         <target state="needs-translation">Localization Overview</target>
       </trans-unit>
       <trans-unit id="usersettings.replaceColumnsList" resname="usersettings.replaceColumnsList">
-        <source>Select which fields are available when using the "Edit all" buttons under "List" → "Localization overview".</source>
-        <target state="needs-translation">Select which fields are available when using the "Edit all" buttons under "List" → "Localization overview".</target>
+        <source>Select which fields are available when using the "Edit all" buttons under "Info" → "Localization overview".</source>
+        <target state="needs-translation">Select which fields are available when using the "Edit all" buttons under "Info" → "Localization overview".</target>
       </trans-unit>
     </body>
   </file>
