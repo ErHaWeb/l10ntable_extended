@@ -12,7 +12,6 @@
  *
  * The TYPO3 project - inspiring people to share!
  */
-
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Extended Localization Table',
     'description' => 'With the assistance of this extension, the localization overview within the Info module gains an enhanced "Edit all language overlay records" button, featuring individually customizable fields. This empowers users to conveniently perform batch edits on configurable page fields on page translations.',
