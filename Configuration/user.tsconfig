@@ -1,5 +1,4 @@
 tx_l10ntableextended {
   columnsUrlParameter = columnsOnly
-  searchColumnsList = title,nav_title,l18n_cfg,hidden|title,nav_title,hidden
-  replaceColumnsList = title,nav_title,l18n_cfg,hidden
+  replaceColumnsList = 
 }

@@ -38,8 +38,7 @@ tx_l10ntableextended {
 
 ![User TSconfig](Documentation/Images/UserTsConfig.png)
 
-In this example, the two fields `seo_title` and `description` would be added to the standard field
-list `title,nav_title,hidden`.
+In this example, the two fields `seo_title` and `description` would be added to the default fields `title`, `nav_title` and `hidden`.
 
 Of course, it is also possible to omit all or some of the fields that are used by default and use only your own fields.
 In this case overwrite the default list via a simple `=` statement.
@@ -84,33 +83,9 @@ determine the page fields that should be editable via a multiple selection field
 
 ![Backend User Settings](Documentation/Images/BackendUserSettings.png)
 
-## Attention
-
-Please do not expect too much from this extension. It is based on a simple string replacement in the final output of the
-function `TranslationStatusController::renderL10nTable`.
-
-The disadvantage is that the functionality of this extension is broken if something of the output of the method changes
-in the future. After all, the output at the required position remained identical in both TYPO3 v11 and v12.
-
-The advantage with this approach is that despite the use of XCLASS no problems with the core behavior can arise.
-
 ## Tipp
 
-If the default fields used by the TYPO3 core for batch editing in future versions have indeed changed and this extension
-no longer works, try updating the following default `User TSconfig` setting to match the new field list:
-
-```
-tx_l10ntableextended {
-  searchColumnsList = title,nav_title,l18n_cfg,hidden|title,nav_title,hidden
-}
-```
-
-The pipe symbol `|` allows you to define several possible search column lists that are to be replaced
-by `tx_l10ntableextended.replaceColumnsList` in the final HTML output. In this way, it is possible to manipulate both
-the button of the default language and the button of the non-default languages and thus make changes to individually
-definable fields in all available languages.
-
-Even the name of the `columnsOnly` parameter that is evaluated by the `EditDocumentController` could be customized using
+The name of the `columnsOnly` parameter, that is evaluated by the `EditDocumentController`, can be customized using
 the following setting.
 
 ```
@@ -119,4 +94,4 @@ tx_l10ntableextended {
 }
 ```
 
-However, this should normally not be necessary.
+However, this should only be necessary if the core decides to use a different parameter to specify the columns to be edited.

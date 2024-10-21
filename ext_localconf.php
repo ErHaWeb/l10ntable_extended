@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-use ErHaWeb\L10ntableExtended\Xclass\TranslationStatusController as TranslationStatusControllerXclass;
+use ErHaWeb\L10ntableExtended\Xclass\UriBuilder as UriBuilderXclass;
+use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Info\Controller\TranslationStatusController;
 
 defined('TYPO3') || die();
 
 /**
- * Adding XCLASS for TranslationStatusController
+ * Adding XCLASS for UriBuilder
  */
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][TranslationStatusController::class] = [
-    'className' => TranslationStatusControllerXclass::class,
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][UriBuilder::class] = [
+    'className' => UriBuilderXclass::class,
 ];
 
 if (GeneralUtility::makeInstance(Typo3Version::class)->getMajorVersion() < 13) {
