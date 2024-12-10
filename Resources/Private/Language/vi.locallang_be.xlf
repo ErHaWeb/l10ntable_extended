@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" original="messages" datatype="plaintext" product-name="l10ntable_extended" date="2024-03-12T01:01:12+01:00" target-language="vi">
+    <header/>
+    <body>
+      <trans-unit id="extmng.enableUserSettings" resname="extmng.enableUserSettings">
+        <source>Enable user settings:If enabled, backend users can select in the user settings which fields are available when using the "Edit all" buttons under "Info" → "Localization overview". If not empty, the backend user selection overrides the TSconfig setting `tx_l10ntableextended.replaceColumnsList`.</source>
+        <target state="needs-translation">Enable user settings:If enabled, backend users can select in the user settings which fields are available when using the "Edit all" buttons under "Info" → "Localization overview". If not empty, the backend user selection overrides the TSconfig setting `tx_l10ntableextended.replaceColumnsList`.</target>
+      </trans-unit>
+      <trans-unit id="usersettings" resname="usersettings">
+        <source>Localization Overview</source>
+        <target state="needs-translation">Localization Overview</target>
+      </trans-unit>
+      <trans-unit id="usersettings.replaceColumnsList" resname="usersettings.replaceColumnsList">
+        <source>Select which fields are available when using the "Edit all" buttons under "Info" → "Localization overview".</source>
+        <target state="needs-translation">Select which fields are available when using the "Edit all" buttons under "Info" → "Localization overview".</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
