@@ -3,17 +3,17 @@
   <file source-language="en" original="messages" datatype="plaintext" product-name="l10ntable_extended" date="2024-03-12T01:01:12+01:00" target-language="no">
     <header/>
     <body>
-      <trans-unit id="extmng.enableUserSettings" resname="extmng.enableUserSettings">
+      <trans-unit id="extmng.enableUserSettings" resname="extmng.enableUserSettings" approved="yes">
         <source>Enable user settings:If enabled, backend users can select in the user settings which fields are available when using the "Edit all" buttons under "Info" → "Localization overview". If not empty, the backend user selection overrides the TSconfig setting `tx_l10ntableextended.replaceColumnsList`.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Aktiver brukerinnstillinger:Hvis aktivert, backendbrukere kan velge i brukerinnstillingene som er tilgjengelige når du bruker "Rediger alle"-knappene under "Info" → "Lokalisering oversikt". Hvis ikke brukeren er tom, overstyrer valget av TSconfig innstillingen `tx_l10ntableextended.replaceColumnsList`.</target>
+        <target state="final">Aktiver brukerinnstillinger:Hvis aktivert, backendbrukere kan velge i brukerinnstillingene som er tilgjengelige når du bruker "Rediger alle"-knappene under "Info" → "Lokalisering oversikt". Hvis ikke brukeren er tom, overstyrer valget av TSconfig innstillingen `tx_l10ntableextended.replaceColumnsList`.</target>
       </trans-unit>
-      <trans-unit id="usersettings" resname="usersettings">
+      <trans-unit id="usersettings" resname="usersettings" approved="yes">
         <source>Localization Overview</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Oversikt over oversettelser</target>
+        <target state="final">Oversikt over oversettelser</target>
       </trans-unit>
-      <trans-unit id="usersettings.replaceColumnsList" resname="usersettings.replaceColumnsList">
+      <trans-unit id="usersettings.replaceColumnsList" resname="usersettings.replaceColumnsList" approved="yes">
         <source>Select which fields are available when using the "Edit all" buttons under "Info" → "Localization overview".</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Velg hvilke felt som er tilgjengelige ved bruk av "Rediger alle"-knappene under "Info" → "Lokalisering oversikt".</target>
+        <target state="final">Velg hvilke felt som er tilgjengelige ved bruk av "Rediger alle"-knappene under "Info" → "Lokalisering oversikt".</target>
       </trans-unit>
     </body>
   </file>
