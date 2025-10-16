@@ -5,15 +5,15 @@
     <body>
       <trans-unit id="extmng.enableUserSettings" resname="extmng.enableUserSettings">
         <source>Enable user settings:If enabled, backend users can select in the user settings which fields are available when using the "Edit all" buttons under "Info" → "Localization overview". If not empty, the backend user selection overrides the TSconfig setting `tx_l10ntableextended.replaceColumnsList`.</source>
-        <target state="needs-translation">Enable user settings:If enabled, backend users can select in the user settings which fields are available when using the "Edit all" buttons under "Info" → "Localization overview". If not empty, the backend user selection overrides the TSconfig setting `tx_l10ntableextended.replaceColumnsList`.</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Aktivér brugerindstillinger:Hvis aktiveret, backend brugere kan vælge i brugerindstillingerne, hvilke felter der er tilgængelige, når du bruger "Rediger alle" knapper under "Info" → "Lokalisering oversigt". Hvis ikke tom, tilsidesætter brugervalget af backend indstillingen TSconfig `tx_l10ntableextended.replaceColumnsList`.</target>
       </trans-unit>
       <trans-unit id="usersettings" resname="usersettings">
         <source>Localization Overview</source>
-        <target state="needs-translation">Localization Overview</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Overblik Over Lokalisering</target>
       </trans-unit>
       <trans-unit id="usersettings.replaceColumnsList" resname="usersettings.replaceColumnsList">
         <source>Select which fields are available when using the "Edit all" buttons under "Info" → "Localization overview".</source>
-        <target state="needs-translation">Select which fields are available when using the "Edit all" buttons under "Info" → "Localization overview".</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Vælg hvilke felter der er tilgængelige, når du bruger "Rediger alle" knapperne under "Info" → "Lokaliseringsoversigt".</target>
       </trans-unit>
     </body>
   </file>
